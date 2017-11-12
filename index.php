@@ -9,16 +9,13 @@
 //   $log->addWarning('Предупреждение');
 // // var_dump($log);
 
- //require(__DIR__ . './vendor/yandex/geo/autoload.php');
-// var_dump($_POST["description"]);
-
 $api = new \Yandex\Geo\Api();
 
 // Можно искать по точке
 $api->setPoint(30.5166187, 50.4452705);
 
 // Или можно икать по адресу
-$api->setQuery($adres);
+// $api->setQuery($adres);
 
 // Настройка фильтров
 $api
@@ -49,17 +46,7 @@ echo 'Долгота '.$item->getLongitude().'<br>';
 $latitude = $item->getLatitude();
 $longitude = $item->getLongitude();
 }
-// echo $latitude;
-// echo $longitude;
-// echo 'Долгота '.$item->getData().'<br>';
-// echo $bmwX5->getFullDescription() . '<br />';
-// echo 'Цвет: '. $bmwX5->getColor().'<br />';
-// echo 'Текущая скорость: '. $bmwX5->getCurrentSpeed().'<br />';
-// echo '<hr>';
-//print_r($api->setQuery('Тверская 6'));
-// echo $collection;
-// var_dump($collection);
-//{ ["description"]=> string(18) "Пятигорск" ["save"]=> string(10) "Найти" }
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -82,10 +69,6 @@ $longitude = $item->getLongitude();
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
      <!-- Если вы используете API локально, то в URL ресурса необходимо указывать протокол в стандартном виде (http://...) -->
    <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-    <!-- <script src="icon_customImage.js" type="text/javascript"></script> -->
-    <?php 
-// if(!empty($_POST)){
-    ?>
 	<style>
         html, body, #map {
             width: 90%; height: 100%; padding: 10px; margin: 0;
@@ -146,29 +129,9 @@ $longitude = $item->getLongitude();
         .add(myPlacemark)
         .add(myPlacemarkWithContent);
 });</script>
-<?php // }else {
-//echo "Введите город для поиска";}?>
 </head>
 <body>
 <div id="map"></div>
 </body>
 </html>
 
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <title>Примеры. Метка</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <! Если вы используете API локально, то в URL ресурса необходимо указывать протокол в стандартном виде (http://...)-->
-    <!-- <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-    <script src="placemark.js" type="text/javascript"></script>
-	<style>
-        html, body, #map {
-            width: 100%; height: 100%; padding: 0; margin: 0;
-        }
-    </style>
-</head>
-<body>
-    <div id="map"></div>
-</body> -->
-<!-- </html> -->
